@@ -12,3 +12,6 @@
 */
 
 Route::get('/', 'HomeController@index');
+
+// admin
+Route::get('/backend', 'AdminController@index');
