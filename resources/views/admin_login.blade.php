@@ -26,11 +26,28 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
+  
+    
+      <!-- This is a warning alert—check it out! -->
+      <?php
+        $msg = Session::get('message');
+        if ($msg) {
+          ?>
+          <div class="alert alert-warning text-center mb-3" role="alert">
+            <?php
+              echo $msg;
+            ?>
+          </div>
+          <?php
+        }
+      ?>
+    
       <p class="login-box-msg">Sign in to start your session</p>
 
-      <form action="{{URL::to('backend/index3.html')}}" method="post">
+      <form action="{{url('admin-dashboard')}}" method="post">
+        {{ csrf_field() }}
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" name="email" class="form-control" placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -38,7 +55,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" name="password" class="form-control" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
