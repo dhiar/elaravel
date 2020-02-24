@@ -33,6 +33,7 @@ class AdminController extends Controller
         if ($result) {
             Session::put('user_name',$result->name);
             Session::put('user_id',$result->id);
+            Session::put('message', null);
             return Redirect::to('/dashboard');
         } else {
             Session::put('message', 'Email or Password Invalid');
