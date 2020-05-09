@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@index');
 
 // admin
+Route::get('/logout', 'SuperAdminController@index');
 Route::get('/admin', 'AdminController@index');
 Route::get('/dashboard', 'AdminController@show_dashboard');
 Route::post('/admin-dashboard', 'AdminController@dashboard');
